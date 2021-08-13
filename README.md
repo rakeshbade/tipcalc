@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Tip Calculator App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A tip calculator from frontendmentor([Click Here](https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX)). This project is not exact clone but made taking the challenge as reference. This is written in react.
+
+This app will calculate the tip based on the total bill and number of persons sharing the bill. Will be really handy while writing checks.
 
 ## Available Scripts
 
