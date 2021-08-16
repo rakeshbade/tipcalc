@@ -1,0 +1,24 @@
+
+
+.subtotal-content{
+    display: flex;
+    justify-content: space-between;
+    padding: .7rem 0px;
+}
+
+.subtotal-content label{
+    font-size: .7rem;
+}
+
+.subtotal-content label > em{
+    display: block;
+    font-size: .6rem;
+    color: rgb(75,134,137);
+}
+
+.subtotal-content .subtotal-amount{
+    font-size: 2rem;
+    color: rgb(44,192,173);
+    font-weight: 600;
+    line-height: 1.5rem;
+}

@@ -1,5 +1,5 @@
 import './App.css';
-import MainContainerComponent from './mainContainer/main.container.component';
+import MainContainerComponent from './Main/main.container.component';
 
 function App() {
   return (

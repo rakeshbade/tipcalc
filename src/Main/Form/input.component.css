@@ -1,0 +1,55 @@
+
+
+.form-control{
+    width: 100%;
+    display: block;
+    background-color: rgb(225, 235, 240);
+    border: none;
+    color: rgba(27,70,77);
+    line-height: 1.6em;
+    border-radius: .3em;
+    font-size: .95em;
+    font-weight: 600;
+    font-family: 'Source Code Pro', monospace;
+    transition: ease-in-out .5s;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.form-control:focus{
+    outline:none;
+    background-color: rgb(215, 225, 230);
+    box-shadow: 0px 0px 4px rgb(200, 215, 220) inset;
+}
+.form-control::placeholder{
+    color:rgb(159,184,184);
+}
+button.form-control{
+    background-color: rgb(206, 217, 223);
+    color: rgba(27,70,77);
+}
+button.form-control:focus{
+    background-color: rgba(27,70,77);
+    color: rgb(44,192,173);
+}
+button.form-control:disabled{
+    opacity: .25;
+}
+.form-input-row > label{
+    display: block;
+    font-size: .7rem;
+    font-weight: 600;
+    line-height: 1.4rem;
+}
+
+.form-icon .form-control{
+    padding-left: 30px;
+}
+
+.form-icon .icon {
+    position: absolute;
+    font-size: .7em;
+    color:rgb(159,184,184);
+    padding: 8px;
+    height: 1.6em;
+}
