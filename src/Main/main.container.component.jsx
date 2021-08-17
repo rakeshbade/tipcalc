@@ -82,13 +82,11 @@ export class MainContainerComponent extends Component {
             const _bill = this.state.bill;
             tipAmout = (_bill * this.state.tipPercent) / 100;
         }
-        const totalTipAmount = tipAmout / this.state.customers;
-        const billAmount = this.state.bill / this.state.customers;
-        if (isFinite(totalTipAmount)) {
-            this.setState({ tipPerCustomer: totalTipAmount.toFixed(2) })
-        }
-        if (isFinite(billAmount)) {
-            this.setState({ billPerCustomer: billAmount.toFixed(2) })
+        const tipPerCustomer = tipAmout / this.state.customers;
+        const billPerCustomer = (this.state.bill / this.state.customers);
+        if(isFinite(billPerCustomer) && isFinite(tipPerCustomer)){
+            this.setState({ tipPerCustomer: tipPerCustomer.toFixed(2) })
+            this.setState({ billPerCustomer: (billPerCustomer + tipPerCustomer).toFixed(2) })
         }
     }
 
