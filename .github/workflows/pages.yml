@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-    - develop
+    - master
     paths-ignore:
     - '**.md'
 
@@ -15,19 +15,10 @@ jobs:
     # defaults:
       # run:
       #   working-directory: ~/
-    steps:
-    - name: List Files
-      run: |
-        ls
-    - name: Install Dependencies
-      run: |
-        npm install
-    - name: Run Unit Tests
-      run: |
-        npm run test
-    - name: Build Package
-      run: |
-        npm run build
+    - name: Install, Test and Build
+    - run: npm install
+    - run: npm run test
+    - run: npm run build
     - name: Publish to Pages
       uses: peaceiris/actions-gh-pages@v3.6.1
       with:
