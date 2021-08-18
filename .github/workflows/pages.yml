@@ -1,0 +1,26 @@
+name: Runner CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+      paths-ignore:
+      - '**.md'
+
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install Dependencies
+      run: |
+        npm install
+    - name: Run Unit Tests
+        npm run test
+    - name: Build Package
+        npm run build
+    - name: Publish to Pages
+      with: 
+        branch: gh-pages
+        folder: build
