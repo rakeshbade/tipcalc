@@ -12,19 +12,18 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    env:
-      working-directory: ~/
+    defaults:
+      run:
+        working-directory: ~/
     steps:
     - name: Install Dependencies
-      working-directory: ${{env.working-directory}}
       run: |
+        ls
         npm install
     - name: Run Unit Tests
-      working-directory: ${{env.working-directory}}
       run: |
         npm run test
     - name: Build Package
-      working-directory: ${{env.working-directory}}
       run: |
         npm run build
     - name: Publish to Pages
