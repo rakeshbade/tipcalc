@@ -107,7 +107,7 @@ export class MainContainerComponent extends Component {
                         <div className="form-input-row">
                             <label>Select Tip %</label>
                             <div className="tip-select-grid">
-                                {[5, 10, 15, 25, 50].map((tip, index) => <button className="form-control" onClick={(e) => { this.setTipBtnStyle(e.target); this.updateTipAmount(tip) }} key={index} > {tip}%</button>)}
+                                {[5, 10, 15, 20, 25].map((tip, index) => <button className="form-control" onClick={(e) => { this.setTipBtnStyle(e.target); this.updateTipAmount(tip) }} key={index} > {tip}%</button>)}
                                 <input type="text" className="form-control input-text text-center" placeholder="$$" onChange={this.inputCustomTip} ref={this.customTipInput} onClick={this.selectInput}  />
                             </div>
                         </div>
