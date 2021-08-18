@@ -21,6 +21,8 @@ jobs:
     - name: Build Package
         npm run build
     - name: Publish to Pages
-      with: 
-        branch: gh-pages
-        folder: build
+      uses: peaceiris/actions-gh-pages@v3.6.1
+      with:
+        publish_dir: ./_build/*
+        github_token: ${{ secrets.PUB_PAGES }}
+        silent: true
