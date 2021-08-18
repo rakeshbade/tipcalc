@@ -54,3 +54,10 @@ button.form-control:disabled{
     padding: 8px;
     height: 1.6em;
 }
+
+@media (max-width:768px) {
+    .form-control, .form-icon .icon{
+        line-height: 2em;
+        font-size: 1.2em;
+    }
+}
