@@ -12,9 +12,16 @@ jobs:
         with:
           persist-credentials: false 
 
-      - name: Install and Build
+      - name: Install Dependencies
         run: |
           npm install
+
+      - name: Run Tests
+        run: |
+          npm run-script test
+        
+      - name: Build Package
+        run: |
           npm run-script build
 
       - name: Deploy
