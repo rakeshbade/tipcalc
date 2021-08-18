@@ -102,7 +102,7 @@ export class MainContainerComponent extends Component {
                     <div className="calc-container">
                         <div className="form-input-row">
                             <label>Bill</label>
-                            <FormInputComponent Icon={faUser} Value={this.state.bill}  Placeholder="0"  onChange={this.inputBillChange} onClick={this.selectInput} />
+                            <FormInputComponent Icon={faDollarSign} Value={this.state.bill}  Placeholder="0"  onChange={this.inputBillChange} onClick={this.selectInput} />
                         </div>
                         <div className="form-input-row">
                             <label>Select Tip %</label>
@@ -113,7 +113,7 @@ export class MainContainerComponent extends Component {
                         </div>
                         <div className="form-input-row">
                             <label>Number of People</label>
-                            <FormInputComponent Icon={faDollarSign} Value={this.state.customers} Placeholder="0" onChange={this.inputCustomerChange}  onClick={this.selectInput}  />
+                            <FormInputComponent Icon={faUser} Value={this.state.customers} Placeholder="0" onChange={this.inputCustomerChange}  onClick={this.selectInput}  />
                         </div>
                     </div>
                     <div className="total-container">
