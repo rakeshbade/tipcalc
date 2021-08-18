@@ -16,9 +16,11 @@ jobs:
       run:
         working-directory: ~/
     steps:
-    - name: Install Dependencies
+    - name: List Files
       run: |
         ls
+    - name: Install Dependencies
+      run: |
         npm install
     - name: Run Unit Tests
       run: |
