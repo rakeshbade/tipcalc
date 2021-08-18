@@ -6,7 +6,7 @@ import { faDollarSign, faUser } from '@fortawesome/free-solid-svg-icons'
 
 export class MainContainerComponent extends Component {
     customTipInput = React.createRef();
-    initial = {
+    defaultState = {
         customers: '',
         bill: '',
         tip: '',
@@ -15,7 +15,7 @@ export class MainContainerComponent extends Component {
         tipPerCustomer: (0).toFixed(2),
         billPerCustomer: (0).toFixed(2)
     }
-    state = {...this.initial}
+    state = {...this.defaultState}
 
     inputBillChange = (event) => {
         const _currentValue = event.target.value;
@@ -61,7 +61,7 @@ export class MainContainerComponent extends Component {
     resetStatus = (status, forceReset) => {
         this.setState({ reset: status });
         if (forceReset === true) {
-            this.setState({...this.initial});
+            this.setState({...this.defaultState});
             if (this.customTipInput?.current) {
                 const target = this.customTipInput.current;
                 this.customTipInput.current.value = null;
@@ -90,6 +90,10 @@ export class MainContainerComponent extends Component {
         }
     }
 
+    selectInput = (event)=>{
+        event.target.focus();
+        event.target.select();
+    }
 
     render() {
         return (
@@ -98,18 +102,18 @@ export class MainContainerComponent extends Component {
                     <div className="calc-container">
                         <div className="form-input-row">
                             <label>Bill</label>
-                            <FormInputComponent Icon={faUser} Value={this.state.bill} onChange={this.inputBillChange} />
+                            <FormInputComponent Icon={faUser} Value={this.state.bill}  Placeholder="0"  onChange={this.inputBillChange} onClick={this.selectInput} />
                         </div>
                         <div className="form-input-row">
                             <label>Select Tip %</label>
                             <div className="tip-select-grid">
                                 {[5, 10, 15, 25, 50].map((tip, index) => <button className="form-control" onClick={(e) => { this.setTipBtnStyle(e.target); this.updateTipAmount(tip) }} key={index} > {tip}%</button>)}
-                                <input type="text" className="form-control input-text text-center" placeholder="Custom" onChange={this.inputCustomTip} ref={this.customTipInput} />
+                                <input type="text" className="form-control input-text text-center" placeholder="Custom" onChange={this.inputCustomTip} ref={this.customTipInput} onClick={this.selectInput}  />
                             </div>
                         </div>
                         <div className="form-input-row">
                             <label>Number of People</label>
-                            <FormInputComponent Icon={faDollarSign} Value={this.state.customers} onChange={this.inputCustomerChange} />
+                            <FormInputComponent Icon={faDollarSign} Value={this.state.customers} Placeholder="0" onChange={this.inputCustomerChange}  onClick={this.selectInput}  />
                         </div>
                     </div>
                     <div className="total-container">
