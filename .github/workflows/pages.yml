@@ -12,18 +12,24 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./
     steps:
     - name: Install Dependencies
+      working-directory: ${{env.working-directory}}
       run: |
         npm install
     - name: Run Unit Tests
+      working-directory: ${{env.working-directory}}
       run: |
         npm run test
     - name: Build Package
+      working-directory: ${{env.working-directory}}
       run: |
         npm run build
     - name: Publish to Pages
       uses: peaceiris/actions-gh-pages@v3.6.1
+      working-directory: ${{env.working-directory}}
       with:
         publish_dir: ./_build/*
         github_token: ${{ secrets.PUB_PAGES }}
