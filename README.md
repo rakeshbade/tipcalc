@@ -4,7 +4,7 @@ A tip calculator from frontendmentor([Click Here](https://www.frontendmentor.io/
 
 This app will calculate the tip based on the total bill and number of persons sharing the bill. Will be really handy while writing checks.
 
-Visit Site: <user>.github.com/<repo>
+Visit Site: https://rakeshbade.github.io/tipcalc/
 
 ## Available Scripts
 
