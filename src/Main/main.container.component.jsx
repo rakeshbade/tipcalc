@@ -101,19 +101,17 @@ export class MainContainerComponent extends Component {
                 <div className="main-container-row">
                     <div className="calc-container">
                         <div className="form-input-row">
-                            <label>Bill</label>
-                            <FormInputComponent Icon={faDollarSign} Value={this.state.bill}  Placeholder="0"  onChange={this.inputBillChange} onClick={this.selectInput} />
+                            <FormInputComponent Name="Bill" Icon={faDollarSign} Value={this.state.bill}  Placeholder="0"  onChange={this.inputBillChange} onClick={this.selectInput} />
                         </div>
                         <div className="form-input-row">
                             <label>Select Tip %</label>
                             <div className="tip-select-grid">
                                 {[5, 10, 15, 20, 25].map((tip, index) => <button className="form-control" onClick={(e) => { this.setTipBtnStyle(e.target); this.updateTipAmount(tip) }} key={index} > {tip}%</button>)}
-                                <input type="text" className="form-control input-text text-center" placeholder="$$" onChange={this.inputCustomTip} ref={this.customTipInput} onClick={this.selectInput}  />
+                                <input type="text" className="form-control input-text text-center" placeholder="$$" data-testid="custom-tip" onChange={this.inputCustomTip} ref={this.customTipInput} onClick={this.selectInput}  />
                             </div>
                         </div>
                         <div className="form-input-row">
-                            <label>Number of People</label>
-                            <FormInputComponent Icon={faUser} Value={this.state.customers} Placeholder="0" onChange={this.inputCustomerChange}  onClick={this.selectInput}  />
+                            <FormInputComponent Name="Number of People" Icon={faUser} Value={this.state.customers} Placeholder="0" onChange={this.inputCustomerChange}  onClick={this.selectInput}  />
                         </div>
                     </div>
                     <div className="total-container">
